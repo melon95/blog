@@ -29,6 +29,7 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
   deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: start git 
         run: cd docs/.vuepress/dist
