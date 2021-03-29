@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "deploy": "yarn build && bash deploy.sh"
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.8.2",
