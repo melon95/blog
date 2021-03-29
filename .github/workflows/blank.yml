@@ -15,22 +15,23 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build-deploy:
-    # The type of runner that the job will run on
+  build-and-deploy:
+    # 服务器环境：最新版 Ubuntu
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      # 拉取代码
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
-      # Runs a single command using the runners shell
-      - run: npm ci # 相当于npm install
-      - run: npm run build
-      - name: start git 
-        run: cd ../../docs/.vuepress/dist
-      - name: git
-        run: git init&&git add -A&&git commit -m 'deploy'
-      - name: push
-        run: git push -f git@github.com:melon95/blog.git master:live 
+      # 生成静态文件
+      - name: Build
+        run: npm install && npm run docs:build
+      # 部署到 GitHub Pages
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: live
+          FOLDER: docs/.vuepress/dist
