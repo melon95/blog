@@ -26,6 +26,8 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
+      - run: npm ci # 相当于npm install
+      - run: npm run build
       - name: start git 
         run: cd ../../docs/.vuepress/dist
       - name: git
