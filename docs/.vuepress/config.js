@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Gitee Blog',
+  title: 'Melon95',
   description: 'Blog',
   host: '127.0.0.1',
   port: '8888',
@@ -26,14 +26,14 @@ module.exports = {
     ['@vuepress/back-to-top']
   ],
   themeConfig: {
+    nextLinks: false,
+    prevLinks: false,
+    sidebarDepth: 2,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Javascript', link: '/guide/' },
-      { text: 'Node', 
-        items: [
-          { text: 'Test', link: '/node/test/' },
-        ]  
-      },
+      { text: 'HTML', link: '/html/' },
+      { text: 'Javascript', link: '/javascript/' },
+      { text: 'Node', link: '/node/' },
       {
         text: 'Vue',
         items: [
@@ -41,6 +41,25 @@ module.exports = {
           { text: 'Japanese', link: '/language/japanese/' }
         ]
       }
-    ]
+    ],
+    sidebar: {
+      '/node/': [
+        {
+          title: '介绍',
+          path: '/node/',
+        },
+        {
+          title: 'test1',
+          path: '/node/test1',  
+        },
+        {
+          title: 'test',
+          children: [
+            ['test2.md', 'test2'],
+            ['test3.md', 'test3'],
+          ]
+        },
+      ],
+    }
   }
 }
