@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Melon95</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.f9dc4244.css" as="style"><link rel="preload" href="/blog/assets/js/app.bf0a7fa4.js" as="script"><link rel="preload" href="/blog/assets/js/2.f8b5bf82.js" as="script"><link rel="preload" href="/blog/assets/js/15.5d3c9a2c.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2e3ad287.js"><link rel="prefetch" href="/blog/assets/js/11.c95bc2cb.js"><link rel="prefetch" href="/blog/assets/js/12.4eeae58e.js"><link rel="prefetch" href="/blog/assets/js/13.9c1f3fc4.js"><link rel="prefetch" href="/blog/assets/js/14.0443da30.js"><link rel="prefetch" href="/blog/assets/js/16.a6049fcb.js"><link rel="prefetch" href="/blog/assets/js/17.e85b83a3.js"><link rel="prefetch" href="/blog/assets/js/18.7d2bdfe0.js"><link rel="prefetch" href="/blog/assets/js/19.17d973bb.js"><link rel="prefetch" href="/blog/assets/js/20.d86f7e23.js"><link rel="prefetch" href="/blog/assets/js/21.895b26fa.js"><link rel="prefetch" href="/blog/assets/js/22.358b33da.js"><link rel="prefetch" href="/blog/assets/js/3.bb7d85e9.js"><link rel="prefetch" href="/blog/assets/js/4.feb7b0bb.js"><link rel="prefetch" href="/blog/assets/js/5.6d5b65b8.js"><link rel="prefetch" href="/blog/assets/js/6.d0bf545a.js"><link rel="prefetch" href="/blog/assets/js/7.f8e03bef.js"><link rel="prefetch" href="/blog/assets/js/8.40e40c32.js"><link rel="prefetch" href="/blog/assets/js/9.df75b1fa.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.f9dc4244.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Melon95</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  HTML
+</a></div><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/blog/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/chinese/" class="nav-link">
+  Chinese
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/japanese/" class="nav-link">
+  Japanese
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  HTML
+</a></div><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/blog/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/chinese/" class="nav-link">
+  Chinese
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/japanese/" class="nav-link">
+  Japanese
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p>当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象（ object ）都有一个私有属性（称之为 <strong>proto</strong> ）指向它的构造函数的原型对象（prototype ）。该原型对象也有一个自己的原型对象( <strong>proto</strong> ) ，层层向上直到一个对象的原型对象为 <code>null</code>。根据定义，<code>null</code> 没有原型，并作为这个原型链中的最后一个环节。<br>JavaScript 对象是动态的属性“包”（指其自己的属性）。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。</p> <blockquote><p>被构造函数创建的实例对象的 <code>[[Prototype]]</code> 指向构造函数的的 <code>prototype</code> 属性。</p></blockquote> <p><a name="S6iBD"></a></p> <h2 id="_1-原型链继承">1. 原型链继承</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Prototype</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg
+<span class="token punctuation">}</span>
+<span class="token class-name">Prototype</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">outputMsg</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">Instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+<span class="token comment">// 这行代码不能写Instance函数内部，这里也不用纠正Instance.prototype.constructor的指向</span>
+<span class="token comment">// 因为Instance.prototype没有这个属性</span>
+<span class="token comment">// 当执行new Prototype()的时候没有办法灵活的传递参数</span>
+<span class="token class-name">Instance</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Prototype</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Instance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span>
+
+instance <span class="token keyword">instanceof</span> <span class="token class-name">Instance</span> <span class="token comment">// true</span>
+instance <span class="token keyword">instanceof</span> <span class="token class-name">Prototype</span> <span class="token comment">// true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p><img src="https://cdn.nlark.com/yuque/0/2020/png/299895/1586501033570-a8b74dac-9ce1-4c36-a63f-b331e803ff14.png#align=left&amp;display=inline&amp;height=129&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=129&amp;originWidth=690&amp;size=11655&amp;status=done&amp;style=none&amp;width=690" alt="image.png"><br>缺点：</p> <ul><li>没办法灵活的传递参数</li> <li>多个实例共同引用同一个原型</li></ul> <p><a name="h7ivn"></a></p> <h2 id="_2-借用构造函数-原型链继承">2. 借用构造函数+原型链继承</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Prototype</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg
+<span class="token punctuation">}</span>
+<span class="token class-name">Prototype</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">outputMsg</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">Instance</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 让Instance实例实现Prototype上面的实例方法</span>
+  <span class="token function">Prototype</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> msg<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 让Instance继承Prototype.prototype上面的原型方法和属性</span>
+<span class="token class-name">Instance</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Prototype</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Instance</span><span class="token punctuation">(</span><span class="token string">'instance'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span>
+
+instance <span class="token keyword">instanceof</span> <span class="token class-name">Instance</span> <span class="token comment">// true</span>
+instance <span class="token keyword">instanceof</span> <span class="token class-name">Prototype</span> <span class="token comment">// true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p><br><img src="https://cdn.nlark.com/yuque/0/2020/png/299895/1586501208686-e1c9f997-4c37-417f-8d53-7cf8db1702be.png#align=left&amp;display=inline&amp;height=144&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=144&amp;originWidth=672&amp;size=13820&amp;status=done&amp;style=none&amp;width=672" alt="image.png"><br>缺点：</p> <ul><li>Instance的原型和实例上会存在同名属性</li></ul> <p><a name="Ho9q7"></a></p> <h2 id="_3-借用构造函数-object-create">3. 借用构造函数+Object.create()</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">Prototype</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg
+<span class="token punctuation">}</span>
+<span class="token class-name">Prototype</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">outputMsg</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">Instance</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">Prototype</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> msg<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>、
+<span class="token comment">// 这里不能直接令Instance.prototype = Prototype.prototype</span>
+<span class="token comment">// 如果这样做的话往Instance.prototype上添加属性，也会改变Prototype.prototype</span>
+<span class="token class-name">Instance</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token class-name">Prototype</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Instance</span><span class="token punctuation">(</span><span class="token string">'instance'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span>
+
+instance <span class="token keyword">instanceof</span> <span class="token class-name">Instance</span> <span class="token comment">// true</span>
+instance <span class="token keyword">instanceof</span> <span class="token class-name">Prototype</span> <span class="token comment">// true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p><img src="https://cdn.nlark.com/yuque/0/2020/png/299895/1586501444723-16225385-94fb-4fa9-b7bc-fc563f96bd08.png#align=left&amp;display=inline&amp;height=132&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=132&amp;originWidth=706&amp;size=11970&amp;status=done&amp;style=none&amp;width=706" alt="image.png"><br></p> <p><a name="ZSoBI"></a></p> <h2 id="_4-class继承">4. Class继承</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Prototype</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg
+  <span class="token punctuation">}</span>
+  <span class="token function">output</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>msg<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Instance</span> <span class="token keyword">extends</span> <span class="token class-name">Prototype</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">msg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Instance</span><span class="token punctuation">(</span><span class="token string">'instance'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span>
+
+
+instance <span class="token keyword">instanceof</span> <span class="token class-name">Instance</span> <span class="token comment">// true</span>
+instance <span class="token keyword">instanceof</span> <span class="token class-name">Prototype</span> <span class="token comment">// true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p><br><img src="https://cdn.nlark.com/yuque/0/2020/png/299895/1586502294615-acfab772-67f9-436a-84a0-6cc2fb2cac71.png#align=left&amp;display=inline&amp;height=139&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=139&amp;originWidth=581&amp;size=12633&amp;status=done&amp;style=none&amp;width=581" alt="image.png"><br><strong>注意</strong>：这里的 <code>Instance.prototype</code> 比第三种中方法中的 <code>Instance.prototype</code> 多了一个 <code>constructor</code> 属性。
+<a name="2HXio"></a></p> <h2 id="总结">总结</h2> <p>虽然上面罗列了四种方法，但是在实际使用中还是推荐使用第四种或者第三种，前面两种只是作为一个介绍的过度。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.bf0a7fa4.js" defer></script><script src="/blog/assets/js/2.f8b5bf82.js" defer></script><script src="/blog/assets/js/15.5d3c9a2c.js" defer></script>
+  </body>
+</html>
