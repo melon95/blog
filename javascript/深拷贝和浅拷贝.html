@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Melon95</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.f9dc4244.css" as="style"><link rel="preload" href="/blog/assets/js/app.a6fd942a.js" as="script"><link rel="preload" href="/blog/assets/js/2.f8b5bf82.js" as="script"><link rel="preload" href="/blog/assets/js/16.31b227e2.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2e3ad287.js"><link rel="prefetch" href="/blog/assets/js/11.c95bc2cb.js"><link rel="prefetch" href="/blog/assets/js/12.4eeae58e.js"><link rel="prefetch" href="/blog/assets/js/13.9c1f3fc4.js"><link rel="prefetch" href="/blog/assets/js/14.0443da30.js"><link rel="prefetch" href="/blog/assets/js/15.0124d9b4.js"><link rel="prefetch" href="/blog/assets/js/17.c6232011.js"><link rel="prefetch" href="/blog/assets/js/18.06ea0958.js"><link rel="prefetch" href="/blog/assets/js/19.c6365cb9.js"><link rel="prefetch" href="/blog/assets/js/20.b9013d93.js"><link rel="prefetch" href="/blog/assets/js/21.d4d72ab4.js"><link rel="prefetch" href="/blog/assets/js/3.af76a730.js"><link rel="prefetch" href="/blog/assets/js/4.feb7b0bb.js"><link rel="prefetch" href="/blog/assets/js/5.6d5b65b8.js"><link rel="prefetch" href="/blog/assets/js/6.d0bf545a.js"><link rel="prefetch" href="/blog/assets/js/7.f8e03bef.js"><link rel="prefetch" href="/blog/assets/js/8.40e40c32.js"><link rel="prefetch" href="/blog/assets/js/9.df75b1fa.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.f9dc4244.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Melon95</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  HTML
+</a></div><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/blog/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/chinese/" class="nav-link">
+  Chinese
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/japanese/" class="nav-link">
+  Japanese
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  HTML
+</a></div><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/blog/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/chinese/" class="nav-link">
+  Chinese
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/japanese/" class="nav-link">
+  Japanese
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p><a name="aMfTy"></a></p> <h2 id="浅拷贝">浅拷贝</h2> <p>拷贝第一层引用类型</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 浅拷贝</span>
+<span class="token keyword">function</span> <span class="token function">shallowClone</span><span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 如果不是对象直接返回</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>target <span class="token operator">||</span> <span class="token keyword">typeof</span> target <span class="token operator">!==</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> target
+  <span class="token keyword">const</span> ans <span class="token operator">=</span> target <span class="token keyword">instanceof</span> <span class="token class-name">Array</span> <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span> target<span class="token punctuation">)</span>
+  <span class="token comment">// for (let key in target) {</span>
+  <span class="token comment">//   if (target.hasOwnProperty(key)) {</span>
+  <span class="token comment">//     ans[key] = target &amp;&amp; typeof target === 'object' ? shallowClone(target[key]) : target[key]</span>
+  <span class="token comment">//   }</span>
+  <span class="token comment">// }</span>
+  <span class="token keyword">return</span> ans
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><a name="E0ryY"></a></p> <h2 id="深拷贝">深拷贝</h2> <p>拷贝所有的引用类型</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>target <span class="token operator">||</span> <span class="token keyword">typeof</span> target <span class="token operator">!==</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> target
+  <span class="token keyword">const</span> ans <span class="token operator">=</span> target <span class="token keyword">instanceof</span> <span class="token class-name">Array</span> <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token comment">// Object.assign(ans, target)</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>target<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      ans<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> target <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> target <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">?</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>target<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">:</span> target<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> ans
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.a6fd942a.js" defer></script><script src="/blog/assets/js/2.f8b5bf82.js" defer></script><script src="/blog/assets/js/16.31b227e2.js" defer></script>
+  </body>
+</html>
