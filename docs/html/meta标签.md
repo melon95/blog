@@ -1,3 +1,5 @@
+<a name="jF6Wd"></a>
+# meta标签
 `meta` 元素表示那些不能由其它HTML元相关元素 (`<base>`, `<link>`, `<script>`, `<style>` 或 `<title>`) 之一表示的任何元数据信息。<br />具有如下属性：<br />
 
 - **charset**：设置文档的字符编码，默认是utf-8。
