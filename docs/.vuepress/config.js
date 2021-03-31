@@ -31,7 +31,7 @@ module.exports = {
     sidebarDepth: 2,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'HTML', link: '/html/' },
+      { text: 'HTML', link: '/html/DOCTYPE' },
       { text: 'Javascript', link: '/javascript/数据类型检测与转换' },
       { text: 'HTTP', link: '/http/HTTP' },
       { text: 'Node', link: '/node/' },
@@ -45,6 +45,28 @@ module.exports = {
       }
     ],
     sidebar: {
+      '/html/': [
+        {
+          title: 'DOCTYPE',
+          path: '/html/DOCTYPE',
+        },
+        {
+          title: 'meta标签',
+          path: '/html/meta标签',
+        },
+        {
+          title: 'script标签的async和defer',
+          path: '/html/script标签的async和defer',
+        },
+        {
+          title: 'DOM的解析和渲染',
+          path: '/html/DOM的解析和渲染',
+        },
+        {
+          title: 'src和href的区别',
+          path: '/html/src和href的区别',
+        },
+      ],
       '/node/': [
         {
           title: '介绍',
