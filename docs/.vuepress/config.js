@@ -32,7 +32,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'HTML', link: '/html/' },
-      { text: 'Javascript', link: '/javascript/' },
+      { text: 'Javascript', link: '/javascript/数据类型检测与转换' },
       { text: 'Node', link: '/node/' },
       {
         text: 'Vue',
@@ -58,6 +58,68 @@ module.exports = {
             ['test2.md', 'test2'],
             ['test3.md', 'test3'],
           ]
+        },
+      ],
+      '/javascript/': [
+        {
+          title: '数据类型检测与转换',
+          path: '/javascript/数据类型检测与转换',
+        },
+        {
+          title: 'JavaScript事件',
+          path: '/javascript/JavaScript事件', 
+        },
+        {
+          title: '模拟原生方法',
+          path: '/javascript/模拟原生方法',
+        },
+        {
+          title: '深拷贝和浅拷贝',
+          path: '/javascript/深拷贝和浅拷贝', 
+        },
+        {
+          title: '防抖和节流',
+          path: '/javascript/防抖和节流', 
+        },
+        {
+          title: '原型链和实现继承的方式',
+          path: '/javascript/原型链和实现继承的方式', 
+        },
+        {
+          title: '作用域和闭包',
+          path: '/javascript/作用域和闭包', 
+        },
+        {
+          title: 'this',
+          path: '/javascript/this', 
+        },
+        {
+          title: '词法作用域&&this&&prototype',
+          path: '/javascript/词法作用域&&this&&prototype'
+        },
+        {
+          title: 'JavaScript事件循环',
+          path: '/javascript/JavaScript事件循环',
+        },
+        {
+          title: 'JavaScript运行机制',
+          path: '/javascript/JavaScript运行机制',
+        },
+        {
+          title: 'Promise介绍和实现',
+          path: '/javascript/Promise介绍和实现',
+        },
+        {
+          title: '模块',
+          path: '/javascript/模块',
+        },
+        {
+          title: 'Class',
+          path: '/javascript/Class',
+        },
+        {
+          title: '跨域解决方案',
+          path: '/javascript/跨域解决方案',
         },
       ],
     }
