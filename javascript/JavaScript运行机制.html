@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Melon95</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.f9dc4244.css" as="style"><link rel="preload" href="/blog/assets/js/app.08531004.js" as="script"><link rel="preload" href="/blog/assets/js/2.f8b5bf82.js" as="script"><link rel="preload" href="/blog/assets/js/13.691c0aa8.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.c791b7ac.js"><link rel="prefetch" href="/blog/assets/js/11.82af7d4c.js"><link rel="prefetch" href="/blog/assets/js/12.3db99d2f.js"><link rel="prefetch" href="/blog/assets/js/14.5f8c542b.js"><link rel="prefetch" href="/blog/assets/js/15.0f0541b5.js"><link rel="prefetch" href="/blog/assets/js/16.7b5b8ca0.js"><link rel="prefetch" href="/blog/assets/js/17.9d3231fd.js"><link rel="prefetch" href="/blog/assets/js/18.bd233cf1.js"><link rel="prefetch" href="/blog/assets/js/3.2d542dc7.js"><link rel="prefetch" href="/blog/assets/js/4.feb7b0bb.js"><link rel="prefetch" href="/blog/assets/js/5.6d5b65b8.js"><link rel="prefetch" href="/blog/assets/js/6.d0bf545a.js"><link rel="prefetch" href="/blog/assets/js/7.f8e03bef.js"><link rel="prefetch" href="/blog/assets/js/8.40e40c32.js"><link rel="prefetch" href="/blog/assets/js/9.776796bf.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.f9dc4244.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Melon95</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  HTML
+</a></div><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/blog/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/chinese/" class="nav-link">
+  Chinese
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/japanese/" class="nav-link">
+  Japanese
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  HTML
+</a></div><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/blog/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/chinese/" class="nav-link">
+  Chinese
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/japanese/" class="nav-link">
+  Japanese
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p><code>JavaScript</code> 是一种单线程的语言，同一时间只能处理一个任务。必须等执行完上一个任务，才会执行下一个任务。<br>这样的设计在某些情况下，会带来很大的不便。于是就出现了同步任务和异步任务。</p> <blockquote><p>如果JS是多线程，在同一时间有两个线程，都操作同一个DOM就会出线问题。</p></blockquote> <p><br>同步任务：<br>在 <code>JavaScript</code> 主线程中按顺序执行，会生成一个执行栈。<br> <br>异步任务：<br>在主线程外，还存在一个<strong>任务队列(task queue)</strong>。当异步任务执行完后，会把它加入到任务队列中，当执行栈里面的同步任务全部执行完的时候，就把任务队列中的任务去回到主线程中执行，然后循环这个过程。<br> <br>主线程从<strong>任务队列</strong>中读取任务,这个过程时循环不断的,这种运行机制也称为<strong>事件循环(Event Loop) .</strong></p> <blockquote><p>任务队列是一个<strong>先进先出</strong>的数据接口,排在前面的优先的主线程取回执行</p></blockquote> <p><br>微任务(<strong>microtask</strong>)和宏任务(<strong>macrotask</strong>):<br>异步任务又细分为微任务和宏任务.</p> <ul><li>微任务<br>- setTimeout<br>- setInterval<br>- setImmediate<br>- MutationObserver</li></ul> <p>- ...</p> <ul><li>宏任务<br>- Promise.then()<br>- Promise.catch()<br>- promise.finally()<br>- process.nextTick- script代码块<br>- ...</li></ul> <p>下图时宏任务和微任务的执行顺序.<br><img src="https://cdn.nlark.com/yuque/0/2019/png/299895/1576916485762-0e7aa324-e2be-495f-a80d-cc1b975a262c.png#align=left&amp;display=inline&amp;height=960&amp;margin=%5Bobject%20Object%5D&amp;name=164974fa4b42e4af.png&amp;originHeight=960&amp;originWidth=1146&amp;size=205190&amp;status=done&amp;style=none&amp;width=1146" alt="164974fa4b42e4af.png"></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.08531004.js" defer></script><script src="/blog/assets/js/2.f8b5bf82.js" defer></script><script src="/blog/assets/js/13.691c0aa8.js" defer></script>
+  </body>
+</html>
