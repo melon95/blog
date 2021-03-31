@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Melon95</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.f9dc4244.css" as="style"><link rel="preload" href="/blog/assets/js/app.5c318f37.js" as="script"><link rel="preload" href="/blog/assets/js/2.f8b5bf82.js" as="script"><link rel="preload" href="/blog/assets/js/20.5227089b.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2e3ad287.js"><link rel="prefetch" href="/blog/assets/js/11.c95bc2cb.js"><link rel="prefetch" href="/blog/assets/js/12.3b220afc.js"><link rel="prefetch" href="/blog/assets/js/13.9a479922.js"><link rel="prefetch" href="/blog/assets/js/14.42a23b9d.js"><link rel="prefetch" href="/blog/assets/js/15.c47ad96c.js"><link rel="prefetch" href="/blog/assets/js/16.dc92fb4f.js"><link rel="prefetch" href="/blog/assets/js/17.071a4682.js"><link rel="prefetch" href="/blog/assets/js/18.3cdfabc7.js"><link rel="prefetch" href="/blog/assets/js/19.e4a4305f.js"><link rel="prefetch" href="/blog/assets/js/21.d8bb44e6.js"><link rel="prefetch" href="/blog/assets/js/22.a6cc3f24.js"><link rel="prefetch" href="/blog/assets/js/23.f8854186.js"><link rel="prefetch" href="/blog/assets/js/24.a6a67f33.js"><link rel="prefetch" href="/blog/assets/js/25.77631033.js"><link rel="prefetch" href="/blog/assets/js/26.a17ba278.js"><link rel="prefetch" href="/blog/assets/js/3.267093af.js"><link rel="prefetch" href="/blog/assets/js/4.feb7b0bb.js"><link rel="prefetch" href="/blog/assets/js/5.6d5b65b8.js"><link rel="prefetch" href="/blog/assets/js/6.d0bf545a.js"><link rel="prefetch" href="/blog/assets/js/7.f8e03bef.js"><link rel="prefetch" href="/blog/assets/js/8.40e40c32.js"><link rel="prefetch" href="/blog/assets/js/9.df75b1fa.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.f9dc4244.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Melon95</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  HTML
+</a></div><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/blog/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/chinese/" class="nav-link">
+  Chinese
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/japanese/" class="nav-link">
+  Japanese
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  HTML
+</a></div><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/blog/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/chinese/" class="nav-link">
+  Chinese
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/japanese/" class="nav-link">
+  Japanese
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p><a name="B3VJP"></a></p> <h2 id="词法作用域">词法作用域</h2> <p>变量是通过<strong>词法作用域</strong>来获取的，当查找一个变量的时候优先在当前作用域内查找，当前作用域不存在这个变量的时，会往父级作用域去查找，直到找到这个变量或者全局作用域。<br>示例：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">let</span> globalName <span class="token operator">=</span> <span class="token string">'globalScope'</span>
+<span class="token keyword">function</span> <span class="token function">parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">let</span> parentName <span class="token operator">=</span> <span class="token string">'parentScope'</span>
+  <span class="token function">children</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">function</span> <span class="token function">children</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">let</span> childrenName <span class="token operator">=</span> <span class="token string">'currentScope'</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>childrenName<span class="token punctuation">)</span>  <span class="token comment">// 在当前作用域下找到</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>parentName<span class="token punctuation">)</span>    <span class="token comment">// 在父级作用域下找到 </span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>globalName<span class="token punctuation">)</span>    <span class="token comment">// 在全局作用于下找到</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>变体：分别打印出什么</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> globalName <span class="token operator">=</span> <span class="token string">'globalScope'</span>
+<span class="token keyword">function</span> <span class="token function">parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> parentName <span class="token operator">=</span> <span class="token string">'parentScope'</span>
+  <span class="token function">children</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">function</span> <span class="token function">children</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">let</span> childrenName <span class="token operator">=</span> <span class="token string">'currentScope'</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>childrenName<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>parentName<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>globalName<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">let</span> globalName <span class="token operator">=</span> <span class="token string">'globalScope'</span>
+<span class="token keyword">function</span> <span class="token function">parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> parentName <span class="token operator">=</span> <span class="token string">'parentScope'</span>
+  <span class="token function">children</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">function</span> <span class="token function">children</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">let</span> childrenName <span class="token operator">=</span> <span class="token string">'currentScope'</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>childrenName<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>parentName<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>globalName<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><a name="r5Vg8"></a></p> <h2 id="this">this</h2> <p><code>this</code> 是指当前执行代码的环境对象，大部分情况下都是一个对象，在严格模式下可能为 <code>undefined</code> 。<br><code>this</code> 的指向不是在定义时确定的，而是在函数运行时才确定的，并且每次运行 <code>this</code> 的指向都可能变化。<br><code>this</code> 的绑定规则可以去看之前的文章。<br><strong>实例：</strong></p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">var</span> Name <span class="token operator">=</span> <span class="token string">'global'</span>
+<span class="token keyword">function</span> <span class="token function">thisOrg</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> Name <span class="token operator">=</span> <span class="token string">'thisOrg'</span>
+  <span class="token comment">// 词法作用域</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Name<span class="token punctuation">)</span> <span class="token comment">// thisOrg</span>
+  <span class="token comment">// this默认绑定规则</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">// window</span>
+  <span class="token function">thisOrgChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">function</span> <span class="token function">thisOrgChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 词法作用域</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Name<span class="token punctuation">)</span> <span class="token comment">// thisOrg</span>
+    <span class="token comment">// this默认绑定规则 + 对象属性读取</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>Name<span class="token punctuation">)</span> <span class="token comment">// global</span>
+    <span class="token comment">// this默认绑定规则</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>  <span class="token comment">// window</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">thisOrg</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">let</span> thisObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  Name<span class="token operator">:</span> <span class="token string">'thisObj'</span><span class="token punctuation">,</span>
+  <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>Name<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// this隐含绑定规则</span>
+thisObj<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// thisObj</span>
+<span class="token keyword">const</span> fn <span class="token operator">=</span> thisObj<span class="token punctuation">.</span>fn
+<span class="token comment">// this默认绑定规则</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// global</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p><a name="THcjl"></a></p> <h2 id="prototype">prototype</h2> <p>当当前对象本身不存在某个属性的时候就会沿着原型链去找这个属性，直到在原型链上找到这个属性或者找到最上层的原型链（默认情况下是 <code>Object.prototype</code> ），最上层的原型链的原型指向 <code>null</code> 。<br>当原型链的函数被调用时，this 指向的是当前对象，而不是原型链函数所在的原型对象。<br>示例：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">let</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'obj1'</span><span class="token punctuation">,</span>
+  <span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'obj2'</span>
+<span class="token punctuation">}</span>
+Object<span class="token punctuation">.</span><span class="token function">setPrototypeOf</span><span class="token punctuation">(</span>obj2<span class="token punctuation">,</span> obj1<span class="token punctuation">)</span>
+obj2<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// obj2</span>
+obj1<span class="token punctuation">.</span><span class="token function">sayName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// obj1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span> <span class="token operator">===</span> obj1<span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.5c318f37.js" defer></script><script src="/blog/assets/js/2.f8b5bf82.js" defer></script><script src="/blog/assets/js/20.5227089b.js" defer></script>
+  </body>
+</html>

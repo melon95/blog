@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Melon95</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="Blog">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.f9dc4244.css" as="style"><link rel="preload" href="/blog/assets/js/app.5c318f37.js" as="script"><link rel="preload" href="/blog/assets/js/2.f8b5bf82.js" as="script"><link rel="preload" href="/blog/assets/js/12.3b220afc.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.2e3ad287.js"><link rel="prefetch" href="/blog/assets/js/11.c95bc2cb.js"><link rel="prefetch" href="/blog/assets/js/13.9a479922.js"><link rel="prefetch" href="/blog/assets/js/14.42a23b9d.js"><link rel="prefetch" href="/blog/assets/js/15.c47ad96c.js"><link rel="prefetch" href="/blog/assets/js/16.dc92fb4f.js"><link rel="prefetch" href="/blog/assets/js/17.071a4682.js"><link rel="prefetch" href="/blog/assets/js/18.3cdfabc7.js"><link rel="prefetch" href="/blog/assets/js/19.e4a4305f.js"><link rel="prefetch" href="/blog/assets/js/20.5227089b.js"><link rel="prefetch" href="/blog/assets/js/21.d8bb44e6.js"><link rel="prefetch" href="/blog/assets/js/22.a6cc3f24.js"><link rel="prefetch" href="/blog/assets/js/23.f8854186.js"><link rel="prefetch" href="/blog/assets/js/24.a6a67f33.js"><link rel="prefetch" href="/blog/assets/js/25.77631033.js"><link rel="prefetch" href="/blog/assets/js/26.a17ba278.js"><link rel="prefetch" href="/blog/assets/js/3.267093af.js"><link rel="prefetch" href="/blog/assets/js/4.feb7b0bb.js"><link rel="prefetch" href="/blog/assets/js/5.6d5b65b8.js"><link rel="prefetch" href="/blog/assets/js/6.d0bf545a.js"><link rel="prefetch" href="/blog/assets/js/7.f8e03bef.js"><link rel="prefetch" href="/blog/assets/js/8.40e40c32.js"><link rel="prefetch" href="/blog/assets/js/9.df75b1fa.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.f9dc4244.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Melon95</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  HTML
+</a></div><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/blog/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/chinese/" class="nav-link">
+  Chinese
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/japanese/" class="nav-link">
+  Japanese
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/html/" class="nav-link">
+  HTML
+</a></div><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Javascript
+</a></div><div class="nav-item"><a href="/blog/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Vue" class="dropdown-title"><span class="title">Vue</span> <span class="arrow down"></span></button> <button type="button" aria-label="Vue" class="mobile-dropdown-title"><span class="title">Vue</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/language/chinese/" class="nav-link">
+  Chinese
+</a></li><li class="dropdown-item"><!----> <a href="/blog/language/japanese/" class="nav-link">
+  Japanese
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><p>在 ES6 之前，生成实例对象的是通过构造函数，ES6 新增了一个 <code>class</code> 也可以生成实例对象，用来模拟传统面向对象语言中的类，但是大体上可以看做是构造函数的语法糖。新的 <code>class</code> 写法只是让对象原型的写法更加清晰、更像面向对象编程的语法而已。
+<a name="8PgZz"></a></p> <h2 id="语法">语法</h2> <p><code>class</code> 新写法：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Parent</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token punctuation">}</span>
+  <span class="token function">parentLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Parent'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> parent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Parent</span><span class="token punctuation">(</span><span class="token string">'parent'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>parent<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">Parent</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>parent<span class="token punctuation">.</span>parentLog <span class="token operator">===</span> <span class="token class-name">Parent</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>parentLog<span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><br> <br>与之对应的构造函数的写法：
+```javascript
+function Parent(name) {
+  this.name = name
+}
+Parent.prototype.parentLog = function () {
+  console.log('Parent')
+}
+<p>const parent = new Parent('parent')
+console.log(parent.<strong>proto</strong> === Parent.prototype) // true</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+&lt;br /&gt;
+&lt;br /&gt;上面两种写法在功能上是完全一致的。&lt;br /&gt;在类中定义的方法其实都是定义在的类的 `prototype` 属性上，并且都是**不可枚举**的(跟**构造函数**有点不同)。
+&lt;a name=&quot;m40EK&quot;&gt;&lt;/a&gt;
+## 静态属性
+实例对象的属性不只可以卸载 `constructor` 方法中，还可以定义在类的最顶层。
+```javascript
+class Parent {
+  constructor(name) {
+    this.name = name
+  }
+  parentLog() {
+    console.log('Parent')
+  }
+  egg = 'egg'
+}
+const parent = new Parent('parent')
+console.log(parent.hasOwnProperty('egg')) // true 有这个属性
+console.log(Parent.hasOwnProperty('egg')) // false 没有这个属性
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><br> <br>可以看到 `parent` 上面多了一个 `egg` 属性。<br>怎么能把属性添加到类上而不是实例对象上呢？可以用 `static` ：
+```javascript
+class Parent {
+  constructor(name) {
+    this.name = name
+  }
+  parentLog() {
+    console.log('Parent')
+  }
+  egg = 'egg'
+  static age = 'age'
+}
+const parent = new Parent('parent')
+console.log(parent.hasOwnProperty('age')) // false 没有这个属性
+console.log(Parent.hasOwnProperty('age')) // true 有这个属性
+```
+<p><a name="iayst"></a></p> <h2 id="静态方法">静态方法</h2> <p>类中定义的方法默认是添加到类的 <code>prototype</code> 上的：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Parent</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token punctuation">}</span>
+  <span class="token function">parentLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Parent'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> parent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Parent</span><span class="token punctuation">(</span><span class="token string">'parent'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>parent<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">'parentLog'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">// false 没有这个方法</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Parent<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">'parentLog'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">// false 没有这个方法</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Parent</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">'parentLog'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// true 有这个方法</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><br> <br>上文在 `Parent` 中定义了一个 `parentLog` 方法，结果只有`Parent.prototype` 才真正拥有这个方法。<br>要把方法添加到类上，而不是类的 `prototype` 上，可以配合 `static` 属性：
+```javascript
+class Parent {
+  constructor(name) {
+    this.name = name
+  }
+  parentLog() {
+    console.log('Parent')
+  }
+  static parentTest() {
+    console.log('test')
+  }
+}
+const parent = new Parent('parent')
+console.log(parent.hasOwnProperty('parentTest')) // false 没有这个方法
+console.log(Parent.hasOwnProperty('parentTest')) // true  有这个方法
+console.log(Parent.prototype.hasOwnProperty('parentTest')) // false 没有这个方法
+```
+<p><a name="aFufr"></a></p> <h2 id="继承">继承</h2> <p>类与类之间可以通过 <code>extends</code> 实现继承：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Parent</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token punctuation">}</span>
+  <span class="token function">parentLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Parent'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Child</span> <span class="token keyword">extends</span> <span class="token class-name">Parent</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">childLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Child'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> parent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Parent</span><span class="token punctuation">(</span><span class="token string">'parent'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> child <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token string">'child'</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; 表示原型链</span>
+<span class="token comment">// parent =&gt; Parent.prototype =&gt; Object.prototype</span>
+<span class="token comment">// child =&gt; Child.prototype =&gt; Object.prototype</span>
+<span class="token comment">// Child =&gt; Parent =&gt; Function.prototype =&gt; Object.prototype</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p><br>当子类继承父类的时候，子类上存在两条原型链：</p> <ul><li>子类继承自父类：<code>Child.__proto__ === Parent</code><br></li> <li>子类 <code>prototype</code> 继承自父类 <code>prototype</code> ：<code>Child.prototype.__proto__ === Parent.prototype</code><br></li></ul> <p>所以当子类继承父类的时候，也会继承父类的静态属性和静态方法，因为父类会成为子类的原型。<br>子类必须在 <code>constructor</code> 方法中调用 <code>super</code> 方法，否则新建实例时会报错。这是因为子类自己的 <code>this</code> 对象，必须先通过父类的构造函数完成塑造，得到与父类同样的实例属性和方法，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用 <code>super</code> 方法，子类就得不到 <code>this</code> 对象。<br>ES5 的继承，实质是先创造子类的实例对象 <code>this</code> ，然后再将父类的方法添加到 <code>this</code> 上面（<code>Parent.apply(this)</code>）。ES6 的继承机制完全不同，实质是先将父类实例对象的属性和方法，加到 <code>this</code> 上面（所以必须先调用 <code>super</code> 方法），然后再用子类的构造函数修改 <code>this</code> 。<br>并且在子类的构造函数中，只有调用 <code>super</code> 之后，才可以使用 <code>this</code> 关键字，否则会报错。这是因为子类实例的构建，基于父类实例，只有 <code>super</code> 方法才能调用父类实例。
+<a name="xa9vF"></a></p> <h2 id="私有属性和私有方法">私有属性和私有方法</h2> <p>私有方法和私有属性是指只能在类的内部访问的方法和属性，外部不能访问。<br>在 ES6 前中私有属性和私有方法一般是通过两种方法来实现：</p> <ul><li>变量名加前缀<br></li> <li>闭包<br></li></ul> <p>在 ES6 中，<code>class</code> 内部可以原生实现私有方法和私有属性，在变量名前加一个 <code>#</code> (<a href="https://github.com/tc39/proposal-class-fields" target="_blank" rel="noopener noreferrer">提案<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>) ：</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">class</span> <span class="token class-name">Parent</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token punctuation">}</span>
+  <span class="token function">parentLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>#log<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  #log <span class="token operator">=</span> <span class="token number">43</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> parent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Parent</span><span class="token punctuation">(</span><span class="token string">'parent'</span><span class="token punctuation">)</span>
+parent<span class="token punctuation">.</span><span class="token function">parentLog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 43</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>parent<span class="token punctuation">.</span>#log<span class="token punctuation">)</span> <span class="token comment">// SyntaxError: Private field '#log' must be declared in an enclosing class</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><br> <br>但是在 Chrome83 中暂时还只是实现了私有属性并没有实现私有方法。
+</div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.5c318f37.js" defer></script><script src="/blog/assets/js/2.f8b5bf82.js" defer></script><script src="/blog/assets/js/12.3b220afc.js" defer></script>
+  </body>
+</html>
