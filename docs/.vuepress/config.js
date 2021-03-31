@@ -42,7 +42,8 @@ module.exports = {
           { text: 'VueRouter', link: '/vuerouter/VueRouter类' },
           { text: 'VueX', link: '/vuex/VueX' }
         ]
-      }
+      },
+      { text: '算法', link: '/algorithm/排序算法' },
     ],
     sidebar: {
       '/html/': [
@@ -212,6 +213,32 @@ module.exports = {
         {
           title: 'VueX',
           path: '/vuex/VueX',
+        },
+      ],
+      '/algorithm/': [
+        {
+          title: '排序算法',
+          path: '/algorithm/排序算法',
+        },
+        {
+          title: 'BFS(广度优先搜索)',
+          path: '/algorithm/BFS',
+        },
+        {
+          title: 'DFS(深度优先搜索)',
+          path: '/algorithm/DFS',
+        },
+        {
+          title: '双指针法',
+          path: '/algorithm/双指针法',
+        },
+        {
+          title: '动态规划',
+          path: '/algorithm/动态规划',
+        },
+        {
+          title: '贪心算法',
+          path: '/algorithm/贪心算法',
         },
       ],
     }
