@@ -1,4 +1,6 @@
-<a name="DV828"></a>
+<a name="cPLzT"></a>
+# apply&&call&&bind
+<a name="xY08p"></a>
 ## call
 `call()` 方法使用一个指定的 `this` 值和单独给出的一个或多个参数来调用一个函数。<br />**语法：**
 ```javascript
