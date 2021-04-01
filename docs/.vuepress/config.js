@@ -1,6 +1,9 @@
 module.exports = {
   title: 'Melon95',
-  description: 'Blog',
+  description: 'vue、react、node、html、前端、javascript、vuepress、melon',
+  head: [
+    ['meta', { name: 'keywords', content: 'vue、react、node、html、前端、javascript、vuepress、melon'}]
+  ],
   host: '127.0.0.1',
   port: '8888',
   base: '/blog/',
@@ -23,9 +26,20 @@ module.exports = {
         headerAnchorSelector: '.header-anchor'
       }
     ],
-    ['@vuepress/back-to-top']
+    ['@vuepress/back-to-top'],
+    ['sitemap', 
+      {
+        hostname: "https://melon95.github.io/blog",
+        // 排除无实际内容的页面
+        exclude: ["/404.html"]
+      }
+    ],
   ],
   themeConfig: {
+    repo: 'https://github.com/melon95/blog',
+    editLinks: true,
+    docsDir: 'docs',
+    docsBranch: 'main',
     nextLinks: false,
     prevLinks: false,
     sidebarDepth: 2,
