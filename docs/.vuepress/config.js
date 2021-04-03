@@ -6,7 +6,7 @@ module.exports = {
   ],
   host: '127.0.0.1',
   port: '8888',
-  base: '/blog/',
+  base: '/',
   markdown: {
     anchor: { permalink: false },
     lineNumbers: true,
@@ -29,7 +29,7 @@ module.exports = {
     ['@vuepress/back-to-top'],
     ['sitemap', 
       {
-        hostname: "https://melon95.github.io/blog",
+        hostname: "https://www.melon95.cn",
         // 排除无实际内容的页面
         exclude: ["/404.html"]
       }
