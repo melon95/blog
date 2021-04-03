@@ -1,10 +1,10 @@
 ---
 home: true
 # heroImage: /hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
-actionText: 快速上手 →
-actionLink: /zh/guide/
+heroText: Melon95
+tagline: 知道的越多，不知道的越多
+actionText: 快速开始 →
+actionLink: html/DOCTYPE
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
