@@ -2,7 +2,7 @@
 home: true
 heroImage: favicon.png
 heroText: Melon95
-tagline: 知道的越多，不知道的越多
+tagline: Good good study, Day day up
 actionText: 快速开始 →
 actionLink: html/DOCTYPE
 features:
