@@ -5,6 +5,7 @@ module.exports = {
     ['meta', { name: 'keywords', content: 'vue、react、node、html、前端、javascript、vuepress、melon'}],
     ['meta', { name: 'google-site-verification', content: '_6vWV88DEE0Lq7zxL6j_sAAlzI1rkEDR3Cw5LIujx-M'}],
     ['meta', { name: 'referrer', content: 'same-origin'}],
+    ['link', { ref: 'icon', sizes: '192x192', href: "./public/favicon.ico"}],
   ],
   host: '127.0.0.1',
   port: '8888',

@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: /hero.png
+heroImage: favicon.png
 heroText: Melon95
 tagline: 知道的越多，不知道的越多
 actionText: 快速开始 →
