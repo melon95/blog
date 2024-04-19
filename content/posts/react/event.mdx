@@ -1,0 +1,338 @@
+---
+title: React 事件系统
+description: React18 事件系统、React18 事件代理.
+date: "2024-04-10"
+---
+
+从React 17开始，所有事件都直接代理到当前的根节点，而不是Document。默认的根节点是id为root的DOM节点。
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a853b3ee-cac9-4358-a3dd-c208c3fbef6d/73253d4a-d189-4d30-9ba8-98191e4a78d0/Untitled.png)
+
+## 事件注册
+
+在调用 `React.createRoot()` 时，会执行 `listenToAllSupportedEvents(rootContainerElement)` 来向根节点注册所有事件。
+
+```jsx
+var listeningMarker = '_reactListening' + Math.random().toString(36).slice(2);
+function listenToAllSupportedEvents(rootContainerElement) {
+  if (!rootContainerElement[listeningMarker]) {
+	  // 往根节点上注册除selectionchange外的所有事件
+    rootContainerElement[listeningMarker] = true;
+    allNativeEvents.forEach(function (domEventName) {
+      if (domEventName !== 'selectionchange') {
+        if (!nonDelegatedEvents.has(domEventName)) {
+         // 注册冒泡事件，因为有些事件是不会冒泡的，比如： scroll
+          listenToNativeEvent(domEventName, false, rootContainerElement);
+        }
+        // 注册捕获事件
+        listenToNativeEvent(domEventName, true, rootContainerElement);
+      }
+    });
+    var ownerDocument = rootContainerElement.nodeType === DOCUMENT_NODE ? rootContainerElement : rootContainerElement.ownerDocument;
+    if (ownerDocument !== null) {
+	    // 往document上注册selectionchange事件
+      if (!ownerDocument[listeningMarker]) {
+        ownerDocument[listeningMarker] = true;
+        listenToNativeEvent('selectionchange', false, ownerDocument);
+      }
+    }
+  }
+}
+```
+
+使用 `addEventListener` 注册事件
+
+```jsx
+function listenToNativeEvent(domEventName, isCapturePhaseListener, target) {
+  var eventSystemFlags = 0;
+  if (isCapturePhaseListener) {
+    eventSystemFlags |= IS_CAPTURE_PHASE;
+  }
+  addTrappedEventListener(target, domEventName, eventSystemFlags, isCapturePhaseListener);
+}
+
+function addTrappedEventListener(targetContainer, domEventName, eventSystemFlags, isCapturePhaseListener, isDeferredListenerForLegacyFBSupport) {
+  var listener = createEventListenerWrapperWithPriority(targetContainer, domEventName, eventSystemFlags);
+  var isPassiveListener = undefined;
+  if (passiveBrowserEventsSupported) {
+    if (domEventName === 'touchstart' || domEventName === 'touchmove' || domEventName === 'wheel') {
+      isPassiveListener = true;
+    }
+  }
+  targetContainer =  targetContainer;
+  var unsubscribeListener;
+  // TODO: There are too many combinations here. Consolidate them.
+  if (isCapturePhaseListener) {
+    if (isPassiveListener !== undefined) {
+      unsubscribeListener = addEventCaptureListenerWithPassiveFlag(targetContainer, domEventName, listener, isPassiveListener);
+    } else {
+      unsubscribeListener = addEventCaptureListener(targetContainer, domEventName, listener);
+    }
+  } else {
+    if (isPassiveListener !== undefined) {
+      unsubscribeListener = addEventBubbleListenerWithPassiveFlag(targetContainer, domEventName, listener, isPassiveListener);
+    } else {
+      unsubscribeListener = addEventBubbleListener(targetContainer, domEventName, listener);
+    }
+  }
+}
+
+function addEventBubbleListener(target, eventType, listener) {
+  target.addEventListener(eventType, listener, false);
+  return listener;
+}
+function addEventCaptureListener(target, eventType, listener) {
+  target.addEventListener(eventType, listener, true);
+  return listener;
+}
+function addEventCaptureListenerWithPassiveFlag(target, eventType, listener, passive) {
+  target.addEventListener(eventType, listener, {
+    capture: true,
+    passive: passive
+  });
+  return listener;
+}
+function addEventBubbleListenerWithPassiveFlag(target, eventType, listener, passive) {
+  target.addEventListener(eventType, listener, {
+    passive: passive
+  });
+  return listener;
+}
+```
+
+不同事件具有不同的优先级，原因在于各个事件的 `listener` 函数是不同的。
+
+```jsx
+function createEventListenerWrapperWithPriority(targetContainer, domEventName, eventSystemFlags) {
+  var eventPriority = getEventPriority(domEventName);
+  var listenerWrapper;
+  switch (eventPriority) {
+    case DiscreteEventPriority:
+      listenerWrapper = dispatchDiscreteEvent;
+      break;
+    case ContinuousEventPriority:
+      listenerWrapper = dispatchContinuousEvent;
+      break;
+    case DefaultEventPriority:
+    default:
+      listenerWrapper = dispatchEvent;
+      break;
+  }
+  return listenerWrapper.bind(null, domEventName, eventSystemFlags, targetContainer);
+}
+```
+
+根据事件的不同优先级，返回不同的 `listener`。
+
+```jsx
+// 离散事件的listener
+function dispatchDiscreteEvent(domEventName, eventSystemFlags, container, nativeEvent) {
+  var previousPriority = getCurrentUpdatePriority();
+  var prevTransition = ReactCurrentBatchConfig.transition;
+  ReactCurrentBatchConfig.transition = null;
+  try {
+    setCurrentUpdatePriority(DiscreteEventPriority);
+    dispatchEvent(domEventName, eventSystemFlags, container, nativeEvent);
+  } finally {
+    setCurrentUpdatePriority(previousPriority);
+    ReactCurrentBatchConfig.transition = prevTransition;
+  }
+}
+// 连续事件的listener
+function dispatchContinuousEvent(domEventName, eventSystemFlags, container, nativeEvent) {
+  var previousPriority = getCurrentUpdatePriority();
+  var prevTransition = ReactCurrentBatchConfig.transition;
+  ReactCurrentBatchConfig.transition = null;
+  try {
+    setCurrentUpdatePriority(ContinuousEventPriority);
+    dispatchEvent(domEventName, eventSystemFlags, container, nativeEvent);
+  } finally {
+    setCurrentUpdatePriority(previousPriority);
+    ReactCurrentBatchConfig.transition = prevTransition;
+  }
+}
+// 默认的listener
+function dispatchEvent(domEventName, eventSystemFlags, targetContainer, nativeEvent) {
+  if (!_enabled) {
+    return;
+  }
+  {
+    dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay(domEventName, eventSystemFlags, targetContainer, nativeEvent);
+  }
+}
+```
+
+由于在执行事件前，我们已经通过 `setCurrentUpdatePriority()` 设置了更新的优先级，并使用 `ReactCurrentBatchConfig.transition = null` 来避免 Transition 的影响。因此，在事件中触发状态更新时，`requestUpdateLane` 将获取到 `setCurrentUpdatePriority()` 设置的优先级，这样不同的事件就会有不同的优先级。
+
+虽然说不同的事件有不同的优先级，但是最终执行的方法还是一样的：`dispatchEvent`
+
+## 事件执行
+
+事件在根节点触发时，会执行已注册的回调函数，即：`dispatchEvent`。
+
+在 `dispatchEvent` 中，通过事件对象 `event` 可以获取触发事件的原始DOM节点，并进一步获取 fiber 节点。然后，从 fiber 节点遍历到根 fiber 节点，同时收集 `fiber.pendingProps` 的同名属性并保存到 `dispatchQueue` 上。最后，如果是捕获阶段，则会逆序执行；如果是冒泡阶段，则会顺序执行。
+
+```jsx
+batchedUpdates(function () {
+  return dispatchEventsForPlugins(domEventName, eventSystemFlags, nativeEvent, ancestorInst);
+});
+  
+function dispatchEventsForPlugins(domEventName, eventSystemFlags, nativeEvent, targetInst, targetContainer) {
+  // 获取原始 DOM 节点
+  var nativeEventTarget = getEventTarget(nativeEvent);
+  var dispatchQueue = [];
+  // 从 fiber 节点往上遍历到根 fiber 节点，一路收集 fiber.pendingProps 同名的属性
+  extractEvents$5(dispatchQueue, domEventName, targetInst, nativeEvent, nativeEventTarget, eventSystemFlags);
+  // 执行 dispatchQueue 上的listener 
+  processDispatchQueue(dispatchQueue, eventSystemFlags);
+}
+```
+
+直接获取 DOM 节点
+
+```jsx
+function getEventTarget(nativeEvent) {
+  // Fallback to nativeEvent.srcElement for IE9
+  // https://github.com/facebook/react/issues/12506
+  var target = nativeEvent.target || nativeEvent.srcElement || window;
+
+  // Normalize SVG <use> element events #4963
+  if (target.correspondingUseElement) {
+    target = target.correspondingUseElement;
+  }
+
+  // Safari may fire events on text nodes (Node.TEXT_NODE is 3).
+  // @see http://www.quirksmode.org/js/events_properties.html
+  return target.nodeType === TEXT_NODE ? target.parentNode : target;
+}
+```
+
+从当前的fiber直接向上遍历到根fiber，汇集所有的同名属性
+
+```jsx
+function accumulateSinglePhaseListeners(targetFiber, reactName, nativeEventType, inCapturePhase, accumulateTargetOnly, nativeEvent) {
+  var captureName = reactName !== null ? reactName + 'Capture' : null;
+  var reactEventName = inCapturePhase ? captureName : reactName;
+  var listeners = [];
+  var instance = targetFiber;
+  var lastHostComponent = null;
+
+  // Accumulate all instances and listeners via the target -> root path.
+  while (instance !== null) {
+    var _instance2 = instance,
+      stateNode = _instance2.stateNode,
+      tag = _instance2.tag;
+    // Handle listeners that are on HostComponents (i.e. <div>)
+    if (tag === HostComponent && stateNode !== null) {
+      lastHostComponent = stateNode;
+
+      // Standard React on* listeners, i.e. onClick or onClickCapture
+      if (reactEventName !== null) {
+        var listener = getListener(instance, reactEventName);
+        if (listener != null) {
+          listeners.push(createDispatchListener(instance, listener, lastHostComponent));
+        }
+      }
+    }
+    // If we are only accumulating events for the target, then we don't
+    // continue to propagate through the React fiber tree to find other
+    // listeners.
+    if (accumulateTargetOnly) {
+      break;
+    }
+    instance = instance.return;
+  }
+  return listeners;
+}
+
+function createDispatchListener(instance, listener, currentTarget) {
+  return {
+    instance: instance,
+    listener: listener,
+    currentTarget: currentTarget
+  };
+}
+```
+
+实现收集所有同名属性的步骤如下：
+
+1. 检查 fiber 是否有对应的 DOM 节点（`fiber.stateNode`）
+2. 检查 DOM 节点上是否有同名属性（`dom.__reactProps`）
+
+![iShot_2024-04-09_17.06.38.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/a853b3ee-cac9-4358-a3dd-c208c3fbef6d/92a9f9a8-d9e1-4fd7-86be-7fe587cd2108/iShot_2024-04-09_17.06.38.png)
+
+```jsx
+function getListener(inst, registrationName) {
+  var stateNode = inst.stateNode;
+  if (stateNode === null) {
+    // Work in progress (ex: onload events in incremental mode).
+    return null;
+  }
+  var props = getFiberCurrentPropsFromNode(stateNode);
+  if (props === null) {
+    // Work in progress.
+    return null;
+  }
+  var listener = props[registrationName];
+  if (shouldPreventMouseEvent(registrationName, inst.type, props)) {
+    return null;
+  }
+  if (listener && typeof listener !== 'function') {
+    throw new Error("Expected `" + registrationName + "` listener to be a function, instead got a value of `" + typeof listener + "` type.");
+  }
+  return listener;
+}
+```
+
+首先遍历 dispatchQueue，然后遍历并执行所有 listener
+
+```jsx
+function processDispatchQueue(dispatchQueue, eventSystemFlags) {
+  var inCapturePhase = (eventSystemFlags & IS_CAPTURE_PHASE) !== 0;
+  // 先遍历 dispatchQueue
+  for (var i = 0; i < dispatchQueue.length; i++) {
+    var _dispatchQueue$i = dispatchQueue[i],
+      event = _dispatchQueue$i.event,
+      listeners = _dispatchQueue$i.listeners;
+    processDispatchQueueItemsInOrder(event, listeners, inCapturePhase);
+    //  event system doesn't use pooling.
+  }
+  // This would be a good time to rethrow if any of the event handlers threw.
+  rethrowCaughtError();
+}
+
+function processDispatchQueueItemsInOrder(event, dispatchListeners, inCapturePhase) {
+  var previousInstance;
+  if (inCapturePhase) {
+	  // 捕获阶段执行 listener
+    for (var i = dispatchListeners.length - 1; i >= 0; i--) {
+      var _dispatchListeners$i = dispatchListeners[i],
+        instance = _dispatchListeners$i.instance,
+        currentTarget = _dispatchListeners$i.currentTarget,
+        listener = _dispatchListeners$i.listener;
+      if (instance !== previousInstance && event.isPropagationStopped()) {
+        return;
+      }
+      executeDispatch(event, listener, currentTarget);
+      previousInstance = instance;
+    }
+  } else {
+	  // 冒泡阶段执行 listener
+    for (var _i = 0; _i < dispatchListeners.length; _i++) {
+      var _dispatchListeners$_i = dispatchListeners[_i],
+        _instance = _dispatchListeners$_i.instance,
+        _currentTarget = _dispatchListeners$_i.currentTarget,
+        _listener = _dispatchListeners$_i.listener;
+      if (_instance !== previousInstance && event.isPropagationStopped()) {
+        return;
+      }
+      executeDispatch(event, _listener, _currentTarget);
+      previousInstance = _instance;
+    }
+  }
+}
+```
+
+## 总结
+
+首先，所有事件都直接被代理到当前的根节点，而不是Document，然后在调用`React.createRoot()`时，会向根节点注册所有事件。不同事件具有不同的优先级，因此在事件中触发状态更新时，`requestUpdateLane` 将获取到 `setCurrentUpdatePriority()` 设置的优先级，使得不同的事件有不同的优先级。最后，事件在根节点触发时，会通过事件对象 `event` 可以获取触发事件的原始DOM节点，并进一步获取 fiber 节点。然后，从 fiber 节点遍历到根 fiber 节点，同时收集 `fiber.pendingProps` 的同名属性并保存到 `dispatchQueue` 上。最后，如果是捕获阶段，则会逆序执行；如果是冒泡阶段，则会顺序执行。
